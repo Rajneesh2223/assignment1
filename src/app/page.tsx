@@ -3,10 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Checkbox } from 'primereact/checkbox';
-import 'primereact/resources/themes/lara-light-indigo/theme.css'; // PrimeReact theme (you can choose a different theme)
-import 'primereact/resources/primereact.min.css'; // PrimeReact core styles
+import 'primereact/resources/themes/lara-light-indigo/theme.css'; 
+import 'primereact/resources/primereact.min.css'; 
 
-// Define the type for the data from the API
 interface Artwork {
   id: number;
   title: string;
@@ -16,10 +15,10 @@ interface Artwork {
 }
 
 const TableComponent: React.FC = () => {
-  const [data, setData] = useState<Artwork[]>([]); // Table data
-  const [selectedRows, setSelectedRows] = useState<Artwork[]>([]); // Selected rows
-  const [totalRecords, setTotalRecords] = useState<number>(0); // Total records for pagination
-  const [loading, setLoading] = useState<boolean>(false); // Loading state for table
+  const [data, setData] = useState<Artwork[]>([]); 
+  const [selectedRows, setSelectedRows] = useState<Artwork[]>([]); 
+  const [totalRecords, setTotalRecords] = useState<number>(0); 
+  const [loading, setLoading] = useState<boolean>(false); 
 
   const fetchData = async (page: number, rows: number) => {
     setLoading(true);
@@ -32,7 +31,7 @@ const TableComponent: React.FC = () => {
     setLoading(false);
   };
 
-  // Handle page change
+  
   const onPageChange = (event: { page: number; rows: number }) => {
     const { page, rows } = event;
     fetchData(page, rows);
